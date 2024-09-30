@@ -1,4 +1,6 @@
+import com.pinguicursos.screenmatchapp.calculos.FiltroRecomendaciones;
 import com.pinguicursos.screenmatchapp.calculos.TimeCalculator;
+import com.pinguicursos.screenmatchapp.modelos.Episodio;
 import com.pinguicursos.screenmatchapp.modelos.Pelicula;
 import com.pinguicursos.screenmatchapp.modelos.Serie;
 
@@ -42,7 +44,17 @@ public class Principal {
         System.out.printf("El tiempo necesario para ver los titulos seleccionados es de %d minutos\n", calculadora.getTiempoTotal());
         System.out.println("*******************************************");
 
+        FiltroRecomendaciones mifiltro = new FiltroRecomendaciones();
+        mifiltro.filtrar(miPelicula);
+        System.out.println("*******************************************");
 
+        Episodio miepisodio = new Episodio();
+        miepisodio.setNumeroEpisodio(1);
+        miepisodio.setNombreEpisodio("Stay alone");
+        miepisodio.setSerie(miSerie);
+        miepisodio.setTotalVisualizaciones(300);
+
+        mifiltro.filtrar(miepisodio);
 
 
     }

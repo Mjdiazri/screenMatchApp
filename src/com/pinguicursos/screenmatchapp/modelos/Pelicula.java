@@ -1,6 +1,8 @@
 package com.pinguicursos.screenmatchapp.modelos;
 
-public class Pelicula extends Titulo {
+import com.pinguicursos.screenmatchapp.calculos.Clasificacion;
+
+public class Pelicula extends Titulo implements Clasificacion {
 
         private String director;
 
@@ -11,4 +13,10 @@ public class Pelicula extends Titulo {
         public void setDirector(String director) {
                 this.director = director;
         }
+
+        public int getClasificacion(){
+                return (int) (calculaMedia()/2);
+        }
+
+
 }
