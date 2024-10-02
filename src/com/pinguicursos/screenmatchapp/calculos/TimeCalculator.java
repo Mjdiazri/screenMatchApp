@@ -8,9 +8,9 @@ public class TimeCalculator {
         return tiempoTotal;
     }
 
-    public void incluye(Titulo titulo){
-        this.tiempoTotal += titulo.getDuracionEnMinutos();
-    }
+//    public void incluye(Titulo titulo){
+//        this.tiempoTotal += titulo.getDuracionEnMinutos();
+//    }
 
 
 }

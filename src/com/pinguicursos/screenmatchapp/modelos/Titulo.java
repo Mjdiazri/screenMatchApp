@@ -3,19 +3,20 @@ package com.pinguicursos.screenmatchapp.modelos;
 public class Titulo {
     private String nombre;
     private int fechaLanzamiento;
-    private int duracionEnMinutos;
     private boolean incluidoEnPlan;
     private double sumaCalificaciones;
     private int contadorCalificaciones;
 
+    public Titulo(String nombre, int fechaLanzamiento, boolean incluidoEnPlan) {
+        this.nombre = nombre;
+        this.fechaLanzamiento = fechaLanzamiento;
+        this.incluidoEnPlan = incluidoEnPlan;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
-        this.duracionEnMinutos = duracionEnMinutos;
-    }
 
     public void setIncluidoEnPlan(boolean incluidoEnPlan) {
         this.incluidoEnPlan = incluidoEnPlan;
@@ -33,11 +34,7 @@ public class Titulo {
         return fechaLanzamiento;
     }
 
-    public int getDuracionEnMinutos() {
-        return duracionEnMinutos;
-    }
-
-    public boolean isIncluidoEnPlan() {
+       public boolean isIncluidoEnPlan() {
         return incluidoEnPlan;
     }
 
@@ -48,7 +45,6 @@ public class Titulo {
     public void muestraFichaTecnica(){
         System.out.println("La pelicula se llama: " + nombre);
         System.out.println("Fecha de lanzamiento: " + fechaLanzamiento);
-        System.out.println("Duracion: " + getDuracionEnMinutos());
     }
 
 
