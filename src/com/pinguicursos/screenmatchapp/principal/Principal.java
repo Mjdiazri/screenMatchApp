@@ -1,5 +1,6 @@
+package com.pinguicursos.screenmatchapp.principal;
+
 import com.pinguicursos.screenmatchapp.calculos.FiltroRecomendaciones;
-import com.pinguicursos.screenmatchapp.calculos.TimeCalculator;
 import com.pinguicursos.screenmatchapp.modelos.Episodio;
 import com.pinguicursos.screenmatchapp.modelos.Pelicula;
 import com.pinguicursos.screenmatchapp.modelos.Serie;
