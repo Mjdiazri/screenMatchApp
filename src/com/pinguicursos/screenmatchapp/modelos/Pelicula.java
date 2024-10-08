@@ -2,7 +2,7 @@ package com.pinguicursos.screenmatchapp.modelos;
 
 import com.pinguicursos.screenmatchapp.calculos.Clasificacion;
 
-public class Pelicula extends Titulo implements Clasificacion {
+public class Pelicula extends Titulo implements Clasificacion{
         private String director;
         private int duracionEnMinutos;
 

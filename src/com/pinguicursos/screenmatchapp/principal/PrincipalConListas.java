@@ -7,6 +7,7 @@ import com.pinguicursos.screenmatchapp.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -42,7 +43,7 @@ public class PrincipalConListas {
                 }
             }
 
-        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        List<String> listaDeArtistas = new ArrayList<>();   
             listaDeArtistas.add("Katheriz Zeta Jones");
             listaDeArtistas.add("Angelina Jolie");
             listaDeArtistas.add("Leonardo Di Caprio");

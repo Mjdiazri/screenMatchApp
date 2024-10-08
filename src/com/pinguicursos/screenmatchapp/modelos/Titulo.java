@@ -1,6 +1,6 @@
 package com.pinguicursos.screenmatchapp.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
     private String nombre;
     private int fechaLanzamiento;
     private boolean incluidoEnPlan;
@@ -55,5 +55,10 @@ public class Titulo {
 
     public double calculaMedia(){
         return  sumaCalificaciones/contadorCalificaciones;
+    }
+
+    @Override
+    public int compareTo(Titulo otroTitulo) {
+        return this.getNombre().compareTo(otroTitulo.getNombre());
     }
 }
