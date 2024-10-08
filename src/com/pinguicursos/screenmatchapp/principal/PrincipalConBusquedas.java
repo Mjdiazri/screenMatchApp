@@ -1,5 +1,8 @@
 package com.pinguicursos.screenmatchapp.principal;
 
+import com.google.gson.Gson;
+import com.pinguicursos.screenmatchapp.modelos.Titulo;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -23,6 +26,11 @@ public class PrincipalConBusquedas {
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulo miTitulo = gson.fromJson(json, Titulo.class);
+        System.out.println(miTitulo);
     }
 }
