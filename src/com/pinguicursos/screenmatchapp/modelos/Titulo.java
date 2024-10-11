@@ -7,6 +7,7 @@ public class Titulo implements Comparable<Titulo>{
     private String nombre;
     @SerializedName("Year")
     private int fechaLanzamiento;
+    private int duracion;
     private boolean incluidoEnPlan;
     private double sumaCalificaciones;
     private int contadorCalificaciones;
@@ -15,6 +16,12 @@ public class Titulo implements Comparable<Titulo>{
         this.nombre = nombre;
         this.fechaLanzamiento = fechaLanzamiento;
         this.incluidoEnPlan = incluidoEnPlan;
+    }
+
+    public Titulo(TituloOmdb miTituloOmdb) {
+        this.nombre = miTituloOmdb.title();
+        this.fechaLanzamiento = Integer.valueOf(miTituloOmdb.year());
+        this.duracion = Integer.valueOf(miTituloOmdb.runtime().substring(0,2));
     }
 
     public void setNombre(String nombre) {
@@ -69,6 +76,8 @@ public class Titulo implements Comparable<Titulo>{
     @Override
     public String toString() {
         return "nombre='" + nombre + '\'' +
-                ", fechaLanzamiento=" + fechaLanzamiento;
+                ", fechaLanzamiento=" + fechaLanzamiento +
+                ", duracion=" + duracion;
     }
+
 }
