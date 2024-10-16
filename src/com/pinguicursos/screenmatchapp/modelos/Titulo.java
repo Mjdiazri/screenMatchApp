@@ -1,11 +1,10 @@
 package com.pinguicursos.screenmatchapp.modelos;
 
 import com.google.gson.annotations.SerializedName;
+import com.pinguicursos.screenmatchapp.exception.ErrorEnConversionDeDuracionException;
 
 public class Titulo implements Comparable<Titulo>{
-    @SerializedName("Title")
     private String nombre;
-    @SerializedName("Year")
     private int fechaLanzamiento;
     private int duracion;
     private boolean incluidoEnPlan;
@@ -21,7 +20,10 @@ public class Titulo implements Comparable<Titulo>{
     public Titulo(TituloOmdb miTituloOmdb) {
         this.nombre = miTituloOmdb.title();
         this.fechaLanzamiento = Integer.valueOf(miTituloOmdb.year());
-        this.duracion = Integer.valueOf(miTituloOmdb.runtime().substring(0,2));
+        if(miTituloOmdb.runtime().contains("N/A")){
+            throw new ErrorEnConversionDeDuracionException("No se logro convertir la duracion, por que existe un N/A");
+        }
+        this.duracion = Integer.valueOf(miTituloOmdb.runtime().substring(0,3).replaceAll(" ", ""));
     }
 
     public void setNombre(String nombre) {
@@ -75,9 +77,9 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
-                ", fechaLanzamiento=" + fechaLanzamiento +
-                ", duracion=" + duracion;
+        return "(nombre= " + nombre +
+                ", fechaLanzamiento= " + fechaLanzamiento +
+                ", duracion= " + duracion + ")";
     }
 
 }
